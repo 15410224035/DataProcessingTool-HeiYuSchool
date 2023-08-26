@@ -1,0 +1,44 @@
+
+标题 = radio选择框
+封面图片 = d:\lesson\selenium06.png
+视频 = d:\lesson\radio.mp4
+用途 = 可独立
+价格 = 5
+
+
+----------------------
+
+
+<br>
+
+<a href='https://www.bilibili.com/video/av64421994/?p=21' target='_blank'>点击这里，边看视频讲解，边学习以下内容</a>
+
+
+radio框选择选项，直接用WebElement的click方法，模拟用户点击就可以了。
+
+比如, 我们要在下面的html中：
+
+- 先打印当前选中的老师名字
+- 再选择 小雷老师
+
+```html
+<div id="s_radio">
+  <input type="radio" name="teacher" value="小江老师">小江老师<br>
+  <input type="radio" name="teacher" value="小雷老师">小雷老师<br>
+  <input type="radio" name="teacher" value="小凯老师" checked="checked">小凯老师
+</div>
+```
+
+对应的代码如下
+
+```py
+# 获取当前选中的元素
+element = wd.find_element_by_css_selector(
+  '#s_radio input[checked=checked]')
+print('当前选中的是: ' + element.get_attribute('value'))
+
+# 点选 小雷老师
+wd.find_element_by_css_selector(
+  '#s_radio input[value="小雷老师"]').click()
+
+```

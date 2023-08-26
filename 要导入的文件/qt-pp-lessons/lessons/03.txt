@@ -1,0 +1,84 @@
+
+标题 = 简单示例
+封面图片 = d:\lesson\selenium03.png
+视频 = d:\lesson\sample.mp4
+用途 = 可独立
+价格 = 5
+
+
+----------------------
+
+<a href='https://www.bilibili.com/video/av64421994/?p=3' target='_blank'>点击这里，边看视频讲解，边学习以下内容</a>
+
+<br>
+
+
+下面的代码, 可以自动化的 打开Chrome浏览器，并且自动化打开百度网站，可以大家可以运行一下看看。
+
+```py
+from selenium import webdriver
+
+# 创建 WebDriver 对象，指明使用chrome浏览器驱动
+wd = webdriver.Chrome(r'd:\webdrivers\chromedriver.exe')
+
+# 调用WebDriver 对象的get方法 可以让浏览器打开指定网址
+wd.get('https://www.baidu.com')
+```
+
+<br>
+
+其中，下面这行代码，就会运行浏览器驱动，并且运行Chrome浏览器
+
+```py
+wd = webdriver.Chrome(r'd:\webdrivers\chromedriver.exe')
+```
+
+注意，等号右边 返回的是 WebDriver 类型的对象，我们可以通过这个对象来操控浏览器，比如 打开网址、选择界面元素等。
+
+
+<br>
+而下面这行代码，就是使用 WebDriver 的 get 方法 打开网址 百度
+
+```py
+wd.get('https://www.baidu.com')
+```
+
+执行上面这行代码时，自动化程序就发起了 打开百度网址的 ```请求消息```  ，通过浏览器驱动， 给 Chrome浏览器。
+
+Chome浏览器接收到该请求后，就会打开百度网址，通过浏览器驱动， 告诉自动化程序  打开成功。
+
+
+
+<div class='alert alert-note'><div>
+执行完自动化代码，如果想关闭浏览器窗口可以调用WebDriver对象的 quit 方法，像这样 wd.quit()
+</div></div>
+
+
+
+
+## 浏览器驱动目录加入环境变量Path
+
+前面，我们的代码创建 WebDriver对象时，需要指定浏览器驱动路径，比如
+
+```py
+wd = webdriver.Chrome(r'd:\webdrivers\chromedriver.exe')
+```
+
+如果，我们把浏览器驱动 ```所在目录``` 加入环境变量 Path， 再写代码时，就可以无需指定浏览器驱动路径了，像下面这样
+
+```py
+wd = webdriver.Chrome()
+```
+
+因为，Selenium会自动在环境变量 Path 指定的那些目录里查找名为chromedriver.exe 的文件。
+
+一定要注意的是， 加入环境变量 Path 的，
+
+不是浏览器驱动全路径，比如  ```d:\webdrivers\chromedriver.exe```
+
+而是 浏览器驱动所在目录，比如  ```d:\webdrivers```
+
+<br>
+
+那么，selenium又是如何 自动化地 在网页上 点击、输入、获取信息，将在接下来的章节要学习。
+

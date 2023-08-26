@@ -1,0 +1,90 @@
+
+标题 = selenium自动化环境安装
+封面图片 = d:\lesson\selenium02.png
+视频 = d:\lesson\selenium_env_setup.mp4
+用途 = 可独立
+价格 = 5
+
+----------------------
+
+
+
+<br>
+
+## 安装
+
+
+<a href='https://www.bilibili.com/video/av64421994/?p=2' target='_blank'>点击这里，边看视频讲解，边学习以下内容</a>
+
+<br>
+
+
+Selenium环境的安装主要就是安装两样东西：  `客户端库`  和 `浏览器 驱动` 。
+
+
+
+
+
+### 安装客户端库
+
+不同的编程语言选择不同的Selenium客户端库。
+
+对应我们Python语言来说，Selenium客户端库的安装非常简单，用 pip 命令即可。
+
+打开 命令行程序，运行如下命令
+
+```py
+pip install selenium
+```
+
+
+<br>
+
+### 安装浏览器驱动
+
+浏览器驱动 是和 浏览器对应的。 不同的浏览器 需要选择不同的浏览器驱动。
+
+目前主流的浏览器中，谷歌 Chrome 浏览器对 Selenium自动化的支持更加成熟一些。强烈推荐大家使用 Chrome浏览器。
+
+<a href='https://www.google.cn/chrome/' target='_blank'>可以点击这里，下载安装谷歌浏览器</a>
+
+
+<br>
+
+确保Chrome浏览器安装好以后，请大家打开下面的连接，访问Chrome 浏览器的驱动下载页面
+
+<a href='https://chromedriver.storage.googleapis.com/index.html' target='_blank'>Chrome 浏览器驱动下载地址</a>
+
+注意浏览器驱动 必须要和浏览器版本匹配，下图红圈里面的版本号 就是和浏览器版本号对应的
+
+
+比如：当前Chrome浏览器版本是72, 通常就需要下载72开头的目录里面的驱动程序 。
+
+注意：驱动和浏览器的版本号越接近越好，但是略有差别（比如72和73），通常也没有什么问题。
+
+<br>
+
+打开目录，里面有3个zip包，分别对应Linux、Mac、Windows平台。
+
+如果我们是Windows平台的电脑，就下载 chromedriver_win32.zip
+
+这是个zip包，下载下来之后，解压里面的程序文件 chromedriver.exe 到某个目录下面，注意这个目录的路径最好是没有中文名和空格的。
+
+比如，解压到 ```d:\webdrivers``` 目录下面。
+
+也就是保证我们的Chrome浏览器驱动路径为 ```d:\webdrivers\chromedriver.exe```
+
+<br>
+
+上面的网址，有些朋友可能打不开，我们在如下百度网盘提供了较新的驱动给大家下载
+
+
+链接：https://pan.baidu.com/s/1dCZ4LGvcAPrzg25UVW8rrQ
+
+提取码：huwt
+
+<br>
+
+基于selenium的web自动化环境搭建就是这些，比较简单。
+
+
