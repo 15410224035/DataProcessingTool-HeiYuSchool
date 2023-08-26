@@ -36,8 +36,14 @@ class WinLogin:
     def login(self):
         username = self.ui.lineEdit_username.text().strip()
         password = self.ui.lineEdit_password.text().strip()
-
-        res = apimgr.login(username, password)
+        try:
+            res = apimgr.login(username, password)
+        except ConnectionError:
+            QMessageBox.warning(
+                self.ui,
+                '登录失败',
+                '连接错误，请检查网络！')
+            res = None
 
         resObj = res.json()
         if resObj['ret'] != 0:
