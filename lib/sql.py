@@ -121,4 +121,3 @@ class SqlData:
         return row,sql_statement
 
 
-# sqldata = SqlData()

@@ -48,9 +48,11 @@ class APIMgr:
             "action": "signin",
             "username": username,
             "password": password
-        })
+        }, timeout=5)  # 设置请求的超时时间为5秒
+        res.raise_for_status()  # 检查请求是否成功，如果不成功会抛出异常
 
         self._printResponse(res)
+
         return res
 
     def onSignOut(self):

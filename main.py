@@ -1,7 +1,9 @@
 from PySide2.QtWidgets import QApplication, QMessageBox, QMdiSubWindow, QTableWidgetItem, QTreeWidgetItem
+from requests.exceptions import ConnectionError, ConnectTimeout
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtCore import Qt
 from PySide2.QtGui import QIcon
+
 
 from win.ImportAccountWin import ImportAccountWin
 from win.ImportCourseWin import ImportCourseWin
@@ -38,20 +40,22 @@ class WinLogin:
         password = self.ui.lineEdit_password.text().strip()
         try:
             res = apimgr.login(username, password)
-        except ConnectionError:
+            resObj = res.json()
+            if resObj['ret'] != 0:
+                QMessageBox.warning(
+                    self.ui,
+                    '登录失败',
+                    resObj['msg'])
+                return
+
+        except (ConnectionError, ConnectTimeout):
             QMessageBox.warning(
                 self.ui,
                 '登录失败',
                 '连接错误，请检查网络！')
-            res = None
-
-        resObj = res.json()
-        if resObj['ret'] != 0:
-            QMessageBox.warning(
-                self.ui,
-                '登录失败',
-                resObj['msg'])
             return
+
+
 
         SI.mainWin= Mainwin()
 
