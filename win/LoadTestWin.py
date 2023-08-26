@@ -8,7 +8,7 @@ from PySide2.QtUiTools import QUiLoader
 from PySide2.QtCore import Qt
 from PySide2.QtGui import QIcon
 from lib.share import SI
-from lib.sql import sqldata
+import lib.sql
 
 
 
@@ -213,6 +213,7 @@ class LoadTestWin:
             f.write(jsonStr)
 
     def action_save(self):
+        sqldata = lib.sql.SqlData()
         def BFS_Algorithm(input_graph, rootppid, titdic):
 
             Q = Queue()

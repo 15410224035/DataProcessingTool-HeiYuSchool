@@ -121,8 +121,4 @@ class SqlData:
         return row,sql_statement
 
 
-sqldata = SqlData()
-# sqldata.insert_video('video2','www.123.com','1')
-# sqldata.insert_lesson('2022-07-03 15:03:03.000000', 'tit', " '_blank'>，", 'cov',
-#         '1', '0', '0', '56', '0', '1', '[{"id": 149, "name": "xpath1"}]', '1', 'xpth', '1')
-# sqldata.select_video()
+# sqldata = SqlData()

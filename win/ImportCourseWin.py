@@ -4,8 +4,8 @@ from PySide2.QtWidgets import QMessageBox, QMdiSubWindow, QTableWidgetItem, QFil
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtCore import Qt
 from lib.share import SI
-from lib.sql import sqldata
 from datetime import datetime
+import lib.sql
 
 
 import json
@@ -73,6 +73,7 @@ class ImportCourseWin:
 
 
     def import_course(self):
+        sqldata = lib.sql.SqlData()
         for row, file in enumerate(self.files):
             with open(file, 'r', encoding='utf8') as f:
                 lines = [l for l in f.readlines() if l != '\n']

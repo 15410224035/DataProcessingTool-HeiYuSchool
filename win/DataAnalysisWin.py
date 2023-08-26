@@ -6,8 +6,7 @@ import pyqtgraph as pg
 from decimal import Decimal
 import time
 from lib.share import SI
-from lib.sql import sqldata
-
+import lib.sql
 
 
 class DataAnalysisWin:
@@ -54,6 +53,7 @@ class DataAnalysisWin:
         self.ui.textBrowser.clear()
 
     def data_analysis(self):
+        sqldata = lib.sql.SqlData()
         self.star_time = time.strptime(self.ui.dateEdit_start.text(), "%Y/%m/%d")
         self.star_time = ''.join(time.strftime("%Y/%m/%d", self.star_time).split('/'))
 

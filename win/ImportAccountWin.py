@@ -1,20 +1,18 @@
 import os
 
-from PySide2.QtWidgets import QApplication, QMessageBox, QMdiSubWindow, QTableWidgetItem, QFileDialog, QTreeWidget, QTreeWidgetItem
+from PySide2.QtWidgets import QMessageBox, QMdiSubWindow, QTableWidgetItem, QFileDialog, QTreeWidget, QTreeWidgetItem
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtCore import Qt
-from PySide2.QtGui import QIcon
 from lib.share import SI
 from lib.api import apimgr
-from lib.sql import sqldata
-from cfg.ConnectionParameters import ConnectionParameters
+
 from openpyxl import load_workbook
 from lib.Commonly import create_username
-from datetime import datetime
+
 
 
 import json
-import re
+
 
 class ImportAccountWin:
 
